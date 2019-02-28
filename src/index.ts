@@ -1,6 +1,5 @@
 import * as cli from 'yargs';
 import timetable from './commands/timetable';
-import serve from './commands/serve';
 
 cli.env('CZU_');
 
@@ -29,6 +28,5 @@ cli.demandCommand();
 cli.help();
 
 cli.command(timetable);
-cli.command(serve);
 
 const argv = cli.argv;

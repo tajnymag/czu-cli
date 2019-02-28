@@ -1,5 +1,5 @@
 import * as ics from 'ics';
-import UisApi from '../../uis';
+import UisApi from 'czu-api';
 
 export default {
 	command: 'timetable',
@@ -23,7 +23,7 @@ export default {
 			password: argv.password,
 			cookie: argv.cookie
 		});
-
+		
 		try {
 			await uis.login();
 		} catch(e) {

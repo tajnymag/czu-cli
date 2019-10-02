@@ -1,9 +1,13 @@
 {
 	"name": "czu-cli",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"main": "src/index.js",
 	"author": "Marek Lukáš",
 	"license": "MIT",
+	"preferGlobal": true,
+	"bin": {
+		"czu-cli": "bin/czu-cli"
+	},
 	"scripts": {
 		"build": "tsc",
 		"cli": "node dist/index.js"
@@ -19,5 +23,9 @@
 		"prettier": "^1.14.3",
 		"ts-node": "^7.0.1",
 		"typescript": "^3.1.1"
-	}
+	},
+	"files": [
+		"bin",
+		"dist"
+	]
 }

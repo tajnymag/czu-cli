@@ -6,18 +6,23 @@ Currently supports only extraction and conversion of student's timetable.
 
 ## Installation
 ```bash
-git clone https://github.com/Tajnymag/czu-cli
-cd czu-cli
-yarn install && yarn build
+yarn global add czu-cli
+
+# or
+
+npm install -g czu-cli
 ```
 
 ## Run
 ```bash
 # help
-yarn cli --help
+czu-cli --help
 
 # print current timetable as iCalendar
-yarn cli timetable --username "xlukm014" --password "hunter2" --format ics
+czu-cli timetable --username "xlukm014" --password "hunter2" --format ics
+
+# save it to a file called calendar.ics
+czu-cli timetable -u "xlukm014" -p "hunter2" --format ics -o calendar.ics
 ```
 
 ## Upcoming features

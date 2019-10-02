@@ -1,5 +1,14 @@
 import * as ics from 'ics';
 import UisApi from 'czu-api';
+import { writeFileSync } from 'fs';
+
+function output(data: string, filePath?: string) {
+	if (filePath) {
+		writeFileSync(filePath, data, { encoding: 'utf8' });
+	} else {
+		console.log(data);
+	}
+}
 
 export default {
 	command: 'timetable',
@@ -15,6 +24,10 @@ export default {
 			coerce(passedDate) {
 				return Date.parse(passedDate);
 			}
+		},
+		output: {
+			alias: 'o',
+			type: 'string'
 		}
 	},
 	async handler(argv) {
@@ -23,10 +36,10 @@ export default {
 			password: argv.password,
 			cookie: argv.cookie
 		});
-		
+
 		try {
 			await uis.login();
-		} catch(e) {
+		} catch (e) {
 			console.error(e.message);
 			console.error('Check your credentials or internet connection!');
 			return 1;
@@ -43,9 +56,9 @@ export default {
 				);
 				return 1;
 			}
-			console.log(ical);
+			output(ical, argv.output);
 		} else {
-			console.log(timetable);
+			output(JSON.stringify(timetable), argv.output);
 		}
 	}
 };

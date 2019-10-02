@@ -9,19 +9,19 @@
 		"czu-cli": "bin/czu-cli"
 	},
 	"scripts": {
-		"build": "tsc",
+		"build": "rm -rf dist && tsc",
 		"cli": "node dist/index.js"
 	},
 	"dependencies": {
-		"czu-api": "^1.0.1",
+		"czu-api": "^1.0.2-2",
 		"date-fns": "^1.29.0",
 		"ics": "^2.8.0",
-		"yargs": "^13.2.1"
+		"yargs": "^14.0.0"
 	},
 	"devDependencies": {
-		"dotenv": "^6.1.0",
+		"dotenv": "^8.1.0",
 		"prettier": "^1.14.3",
-		"ts-node": "^7.0.1",
+		"ts-node": "^8.4.1",
 		"typescript": "^3.1.1"
 	},
 	"files": [
